@@ -97,6 +97,11 @@
     margin: 20px;
   }
   
+  .segment-one p{
+    color: #999;
+  
+  }
+
   .segment-two h2{
     text-transform: uppercase;
   
