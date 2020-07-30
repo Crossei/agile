@@ -15,16 +15,13 @@ background-size: cover;
     }
     
     .card{
-    height: 370px;
+    height: 500px;
     margin-top: 70px;
     margin-bottom: auto;
     width: 400px;
     background-color: rgba(0,0,0,0.5) !important;
     }
-    
-  
-  
-    
+
     .card-header h3{
     color: white;
     }
@@ -63,4 +60,4 @@ background-size: cover;
     .links a{
     margin-left: 4px;
     }
-    
+   
