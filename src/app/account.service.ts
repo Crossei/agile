@@ -14,5 +14,9 @@ export class AccountService {
       return this._http.post<any>("http://localhost:8080/dangnhap",staff)
   }
 
+  public registerUserFromRemote(staff : Staff):Observable<any>{
+    return this._http.post<any>("http://localhost:8080/dangky",staff)
+}
+
  
 }

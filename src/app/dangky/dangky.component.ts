@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validator, Validators} from '@angular/forms';
+import { Staff } from '../staff';
+import { Router } from '@angular/router';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-dangky',
@@ -7,6 +10,8 @@ import {FormGroup, FormControl, Validator, Validators} from '@angular/forms';
   styleUrls: ['./dangky.component.css']
 })
 export class DangkyComponent implements OnInit {
+  staff = new Staff();
+  msg='';
 
   dangkyForm = new FormGroup({
     user: new FormControl('',[
@@ -15,13 +20,19 @@ export class DangkyComponent implements OnInit {
       Validators.pattern(/^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/)
       
     ]),
-    pass: new FormControl(''),
-    number: new FormControl('',[
+    staff_id: new FormControl('',[
       Validators.required,
-      Validators.maxLength(11),
-      Validators.pattern(/^[0-9]/)
+      Validators.maxLength(5),
+      Validators.pattern(/^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/)
+      
     ]),
-    address: new FormControl('',[
+    pass: new FormControl(''),
+    role: new FormControl('',[
+      Validators.required,
+      Validators.maxLength(1),
+      Validators.pattern(/^[0-2]/)
+    ]),
+    fullname: new FormControl('',[
       Validators.minLength(4),
       Validators.pattern(/^[0-9a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/)
     ])
@@ -29,11 +40,25 @@ export class DangkyComponent implements OnInit {
 
   get user() {return this.dangkyForm.get('user');}
   get number() {return this.dangkyForm.get('number');}
-  get address() {return this.dangkyForm.get('address');}
+  get fullname() {return this.dangkyForm.get('fullname');}
+  get role() {return this.dangkyForm.get('role');}
+  get staff_id() {return this.dangkyForm.get('staff_id');}
 
-  constructor() { }
+  constructor(private _service : AccountService,
+    private _router : Router) { }
 
   ngOnInit(): void {
   }
-
+  registerUser(){
+    this._service.registerUserFromRemote(this.staff).subscribe(
+      data => {console.log("respones recevied")
+              this._router.navigate(['/'])
+    },
+      error => {console.log("exception ocurred")
+              this.msg = "Dang ky that bai";
+    }
+    )
 }
+}
+
+
