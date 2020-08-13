@@ -26,7 +26,12 @@ export class DangkyComponent implements OnInit {
       Validators.pattern(/^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/)
       
     ]),
-    pass: new FormControl(''),
+    pass: new FormControl('',[
+      Validators.required,
+    ]),
+    cfpass: new FormControl('',[
+      Validators.required,
+    ]),
     role: new FormControl('',[
       Validators.required,
       Validators.maxLength(1),
@@ -43,6 +48,8 @@ export class DangkyComponent implements OnInit {
   get fullname() {return this.dangkyForm.get('fullname');}
   get role() {return this.dangkyForm.get('role');}
   get staff_id() {return this.dangkyForm.get('staff_id');}
+  get pass() {return this.dangkyForm.get('pass');}
+  get cfpass() {return this.dangkyForm.get('cfpass');}
 
   constructor(private _service : AccountService,
     private _router : Router) { }

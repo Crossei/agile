@@ -97,12 +97,21 @@
                                     <input type="password" class="form-control" placeholder="Mật khẩu"
                                         formControlName="pass" name="pass" [(ngModel)]="staff.pass">
                                 </div>
+                                <div *ngIf="pass.invalid && (pass.touched || pass.dirty)">
+                                            
+                                    <p *ngIf="pass.errors.required" class="alert alert-danger" role="alert"> Hãy điền mật khẩu</p>
+                                </div>
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-key"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="Nhập lại mật khẩu"
+                                    <input type="password" class="form-control" appConfValidator="pass" placeholder="Nhập lại mật khẩu"
                                         formControlName="cfpass">
+                                        
+                                </div>
+                                <div *ngIf="cfpass.invalid && (cfpass.touched || cfpass.dirty)">                 
+                                    <p *ngIf="cfpass.errors.required" class="alert alert-danger" role="alert"> Hãy điền mật khẩu</p>
+                                    <p *ngIf="cfpass.errors.notEqual && !cfpass.errors.required" class="alert alert-danger" role="alert">Mật khẩu không trùng</p>
                                 </div>
                                 
                                 <div class="form-group">
