@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class DangnhapComponent implements OnInit {
   staff = new Staff();
+  
+  invalidLogin = false
   msg='';
   dangnhapForm = new FormGroup({
     user: new FormControl(''),
@@ -27,6 +29,12 @@ export class DangnhapComponent implements OnInit {
   loginUser(){
       this._service.loginUserFromRemote(this.staff).subscribe(
         data => {console.log("respones recevied")
+                this.staff = data
+                console.log(this.staff)
+                  sessionStorage.setItem('username', this.staff.username)
+                  sessionStorage.setItem('role', this.staff.role.toString())
+                  this.invalidLogin = false
+                
                 this._router.navigate(['/'])
       },
         error => {console.log("exception ocurred")
