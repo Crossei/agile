@@ -42,3 +42,89 @@ background-size: cover;
 .row{
     margin-top: 100px;
 }
+/* csss footer */
+
+  .contact{
+   
+    padding: 60px 0;
+    background-color: blueviolet;
+    color: #fff;
+    
+  }
+  
+  .contact a{
+    color: blueviolet;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #fff;
+    text-decoration: none;
+    
+  }
+  
+
+  .icon-box i{
+      border: 2px solid rgb(97, 126, 221); 
+    color:rgb(97, 126, 221);
+    padding: 10px;
+    margin: 20px;
+  }
+  
+  .segment-one p{
+    color: #999;
+  
+  }
+
+  .segment-two h2{
+    text-transform: uppercase;
+  
+  }
+  .segment-two h2:before{
+    content: '|';
+    color: #c65039;
+    padding-right: 12px;
+  }
+  .segment-two ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .segment-two ul li{
+    border-bottom: 1px solid rgb(255, 255, 255, 0.3);
+    line-height: 40px;
+  }
+  .segment-two ul li a{
+    color: #999;
+    text-decoration: none;
+  }
+  .segment-three h2{
+    text-transform: uppercase;
+  
+  }
+  .segment-three h2:before{
+    content: '|';
+    color: #c65039;
+    padding-right: 12px;
+  }
+  .segment-three a{
+    background-color: #494848;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 50%;
+  }
+  .segment-three a i{
+    font-size: 20px;
+    color: #fff;
+    padding: 10px 12px;
+  
+  }
+  .footer-bottom-text{
+    color: #fff;
+    text-align: left;
+    padding-left: 85px ;
+    padding-top: 15px;
+  }
+  hr{
+    background-color: #fff;
+    height: 1px;
+  }

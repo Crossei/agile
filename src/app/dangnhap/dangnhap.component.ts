@@ -21,6 +21,7 @@ export class DangnhapComponent implements OnInit {
 
   constructor(private _service : AccountService,
         private _router : Router) { }
+   
 
   ngOnInit(): void {
     document.body.classList.add('bg-img');
@@ -34,7 +35,7 @@ export class DangnhapComponent implements OnInit {
                   sessionStorage.setItem('username', this.staff.username)
                   sessionStorage.setItem('role', this.staff.role.toString())
                   this.invalidLogin = false
-                
+                  
                 this._router.navigate(['/'])
       },
         error => {console.log("exception ocurred")

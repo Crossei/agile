@@ -13,6 +13,8 @@ import { ThongtinComponent } from './thongtin/thongtin.component';
 import { DatlichComponent } from './datlich/datlich.component';
 import { QuanlyComponent } from './quanly/quanly.component';
 import { QuanlylichComponent } from './quanlylich/quanlylich.component';
+import { DichvuComponent } from './dichvu/dichvu.component';
+import { TintucComponent } from './tintuc/tintuc.component';
 
 
 
@@ -27,8 +29,9 @@ import { QuanlylichComponent } from './quanlylich/quanlylich.component';
       {path:'thongtin' , component:ThongtinComponent },
       {path:'quanly' , component:QuanlyComponent },
       {path:'datlich' , component:DatlichComponent },
-      {path:'quanlylich' , component:QuanlylichComponent }
-    
+      {path:'quanlylich' , component:QuanlylichComponent },
+      {path: 'dichvu', component: DichvuComponent},
+      {path: 'tintuc', component: TintucComponent}
     ])
   ],
   declarations: [ AppComponent,
@@ -40,7 +43,9 @@ import { QuanlylichComponent } from './quanlylich/quanlylich.component';
     ThongtinComponent,
     DatlichComponent,
     QuanlyComponent,
-    QuanlylichComponent 
+    QuanlylichComponent,
+    DichvuComponent,
+    TintucComponent 
   
   ],
   bootstrap:    [ AppComponent ]
