@@ -3,6 +3,11 @@ export class Staff {
     username:string;
     pass:string;
     fullname:string;
+    address:string;
+    phone:string;
+   
+    birth:Date;
+    dateatwork:Date;
     role:number;
     constructor(){}
 }

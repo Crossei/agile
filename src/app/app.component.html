@@ -26,10 +26,10 @@
             <a class="nav-link" href="/">Trang chủ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Tin tức</a>
+            <a class="nav-link" href="/tintuc">Tin tức</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Dịch vụ</a>
+            <a class="nav-link" href="/dichvu">Dịch vụ</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" *ngIf="!_service.isUserLoggedIn()" href="./dangky">Đăng ký</a>
@@ -40,9 +40,12 @@
           
            <li class="nav-item dropdown" *ngIf="_service.isUserLoggedIn()">
              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-             data-toggle="dropdown"  href="">Xin chào {{staff.username}}</a>
+             data-toggle="dropdown"  href="">Xin chào {{username}}</a>
              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-               <a  class="dropdown-item" href="">Thông tin</a>
+               <a  class="dropdown-item" [routerLink]="['thongtin', staff_id]">Thông tin</a>
+               <a  class="dropdown-item" *ngIf="role0()" href="/quanly">Quản lý</a>
+               <a  class="dropdown-item" *ngIf="role1() || role2()" href="">Quản lý bệnh nhân</a>
+               <a  class="dropdown-item" *ngIf="" href="/quanlylich">Lịch</a>
                <div class="dropdown-divider"></div>
                <a  class="dropdown-item" (click)=logOut() href="">Thoát</a>
               </div>

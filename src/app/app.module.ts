@@ -26,7 +26,7 @@ import { TintucComponent } from './tintuc/tintuc.component';
       {path:'' , component:HomepageComponent },
       {path:'dangnhap' , component:DangnhapComponent },
       {path:'dangky' , component:DangkyComponent },
-      {path:'thongtin' , component:ThongtinComponent },
+      {path:'thongtin/:staff_id' , component:ThongtinComponent },
       {path:'quanly' , component:QuanlyComponent },
       {path:'datlich' , component:DatlichComponent },
       {path:'quanlylich' , component:QuanlylichComponent },

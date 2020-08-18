@@ -32,11 +32,14 @@ export class DangnhapComponent implements OnInit {
         data => {console.log("respones recevied")
                 this.staff = data
                 console.log(this.staff)
+                sessionStorage.setItem('staff_id', this.staff.staff_id)
                   sessionStorage.setItem('username', this.staff.username)
                   sessionStorage.setItem('role', this.staff.role.toString())
                   this.invalidLogin = false
                   
-                this._router.navigate(['/'])
+                this._router.navigate(['/']).then(() => {
+                  window.location.reload();
+                });
       },
         error => {console.log("exception ocurred")
                 this.msg = "Mat khau hoac tai khoan khong dung";
