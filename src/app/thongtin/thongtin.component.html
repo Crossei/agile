@@ -93,8 +93,8 @@
                                     <label>Ngày sinh: </label>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="date" value="{{staff.birth}}}" class="form-control"
-                                        formControlName="birth" [(ngModel)]="staff.birth" [readonly]="!btnDisable">
+                                    <input type="date" value="{{staff.birth}}" class="form-control"
+                                        formControlName="birth" [(ngModel)]="birth1" [readonly]="!btnDisable">
                                 </div>
                             </div>
                             <div class="row">
@@ -111,7 +111,7 @@
                                     <label>Ngày làm việc</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{staff.dateatwork}}</p>
+                                    <p>{{staff.dateatwork | date}}</p>
                                 </div>
                             </div>
                             <button [disabled]="!btnDisable"  type="submit"

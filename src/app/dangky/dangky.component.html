@@ -7,33 +7,20 @@
                         </div>
                         <div class="card-body">
                             <form [formGroup]="dangkyForm" (ngSubmit)="registerUser()">
-                                <div class="input-group form-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="ID"
-                                        formControlName="staff_id" name="staff_id" [(ngModel)]="staff.staff_id">
-                                </div>
-                                <div *ngIf="staff_id.invalid && (staff_id.touched || staff_id.dirty)">
-                                            
-                                    <p *ngIf="staff_id.errors.required" class="alert alert-danger" role="alert"> Hãy điền ID</p>
-                                    <p *ngIf="staff_id.errors.maxlength; else patternS" class="alert alert-danger" role="alert"> Hãy điền nho hon 5 ký tự</p>
-                                    <ng-template #patternS>
-                                      <p *ngIf="staff_id.errors.pattern" class="alert alert-danger" role="alert">Sai định dạng (không được chứa dấu cách ở đầu) </p>
-                                    </ng-template>
-                                  </div>
+                                
                                   <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <input type="number" class="form-control" placeholder="Role"
-                                        formControlName="role" name="role" [(ngModel)]="staff.role">
+                                    <select class="form-control" formControlName="role" [(ngModel)]="staff.role">
+                                        
+                                        <option value="1">Bác sĩ</option>
+                                        <option value="2">Y tá</option>
+                                      </select>
+                                    <!-- <input type="number" class="form-control" placeholder="Role"
+                                        formControlName="role" name="role" [(ngModel)]="staff.role"> -->
                                 </div>
-                                <div *ngIf="role.invalid && (role.touched || role.dirty)">
-                                                                        
-                                    <p *ngIf="role.errors.pattern" class="alert alert-danger" role="alert"> Hãy điền tu 0 den 2 theo vai tro</p>
-                                   
-                                  </div>
+                               
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-user"></i></span>

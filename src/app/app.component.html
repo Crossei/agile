@@ -14,7 +14,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">WELCOME FCODE</a>
+      <a class="navbar-brand" href="#">PHONG KHAM TFJ</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -43,9 +43,9 @@
              data-toggle="dropdown"  href="">Xin chào {{username}}</a>
              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                <a  class="dropdown-item" [routerLink]="['thongtin', staff_id]">Thông tin</a>
-               <a  class="dropdown-item" *ngIf="role0()" href="/quanly">Quản lý</a>
-               <a  class="dropdown-item" *ngIf="role1() || role2()" href="">Quản lý bệnh nhân</a>
-               <a  class="dropdown-item" *ngIf="" href="/quanlylich">Lịch</a>
+               <a  class="dropdown-item" href="/quanly">Quản lý</a>
+               <a  class="dropdown-item" href="/datlich">Đặt lịch </a>
+             
                <div class="dropdown-divider"></div>
                <a  class="dropdown-item" (click)=logOut() href="">Thoát</a>
               </div>

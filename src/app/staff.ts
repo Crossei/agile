@@ -7,6 +7,7 @@ export class Staff {
     phone:string;
    
     birth:Date;
+    
     dateatwork:Date;
     role:number;
     constructor(){}

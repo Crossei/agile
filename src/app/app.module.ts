@@ -15,6 +15,7 @@ import { QuanlyComponent } from './quanly/quanly.component';
 import { QuanlylichComponent } from './quanlylich/quanlylich.component';
 import { DichvuComponent } from './dichvu/dichvu.component';
 import { TintucComponent } from './tintuc/tintuc.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -48,6 +49,7 @@ import { TintucComponent } from './tintuc/tintuc.component';
     TintucComponent 
   
   ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [DatePipe]
 })
 export class AppModule { }

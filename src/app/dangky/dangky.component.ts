@@ -20,12 +20,7 @@ export class DangkyComponent implements OnInit {
       Validators.pattern(/^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/)
       
     ]),
-    staff_id: new FormControl('',[
-      Validators.required,
-      Validators.maxLength(5),
-      Validators.pattern(/^[a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ]/)
-      
-    ]),
+   
     pass: new FormControl('',[
       Validators.required,
     ]),
@@ -57,6 +52,15 @@ export class DangkyComponent implements OnInit {
   ngOnInit(): void {
   }
   registerUser(){
+    let x = Math.floor((Math.random() * 999) + 100);
+    if(this.role.value == 1){
+        var y = "BS" + x;
+        this.staff.staff_id = y;
+    }
+        else{
+        var y = "YT" + x;
+        this.staff.staff_id = y;
+    } 
     this._service.registerUserFromRemote(this.staff).subscribe(
       data => {console.log("respones recevied")
               this._router.navigate(['/'])
@@ -65,6 +69,8 @@ export class DangkyComponent implements OnInit {
               this.msg = "Dang ky that bai";
     }
     )
+    
+    
 }
 }
 

@@ -12,23 +12,23 @@ export class AccountService {
   staff = new Staff();
 
   public loginUserFromRemote(staff: Staff): Observable<any> {
-    return this._http.post<any>("http://localhost:8080/dangnhap", staff)
+    return this._http.post<any>("http://localhost:8181/dangnhap", staff)
   }
 
   public registerUserFromRemote(staff: Staff): Observable<any> {
-    return this._http.post<any>("http://localhost:8080/dangky", staff)
+    return this._http.post<any>("http://localhost:8181/dangky", staff)
   }
   public getUserFromRemote(staff_id): Observable<any> {
-    return this._http.get<any>('http://localhost:8080/thongtin/'+`${staff_id}`)
+    return this._http.get<any>('http://localhost:8181/thongtin/'+`${staff_id}`)
   }
   public quanlyUserFromRemote(): Observable<any> {
-    return this._http.get<any>("http://localhost:8080/quanly")
+    return this._http.get<any>("http://localhost:8181/quanly")
   }
   public updateUserFromRemote(staff: Staff): Observable<any> {
-    return this._http.put<any>("http://localhost:8080/thongtin", staff)
+    return this._http.put<any>("http://localhost:8181/thongtin", staff)
   }
   public removeUserFromRemote(staff_id): Observable<any> {
-    return this._http.delete<any>('http://localhost:8080/quanly/'+`${staff_id}`)
+    return this._http.delete<any>('http://localhost:8181/quanly/'+`${staff_id}`)
   }
   authenticate(staff) {
 
